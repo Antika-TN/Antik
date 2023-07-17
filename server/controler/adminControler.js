@@ -115,6 +115,19 @@ const AdminControler ={
             res.status(500).json({error:'internal server error'})
         }
       },
+
+      async sellerproductCount (req,res){
+        try{
+            const sellerId =req.params.id
+            const productCount= await Products.count({
+              where:{SellerId:sellerId}
+            })
+            res.status(200).json({productCount})
+        } catch(error){
+            console.log('error retrieving product count:',error)
+            res.status(500).json({error:'internal server error'})
+        }
+      },
 }
 
 module.exports = AdminControler;

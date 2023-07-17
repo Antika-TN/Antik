@@ -3,6 +3,7 @@ import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } fro
 import DeleteIcon from '@mui/icons-material/Delete';
   import { Link } from 'react-router-dom';
   import Button from '@mui/material/Button';
+  
 
 function Allclient() {
   const [clientsname, setClientssname] = useState([])
@@ -59,12 +60,12 @@ console.error('Error deleting seller:',error);
    </div>
 
 <div>
-    <List>
+    <List className='card'>
       {clientsname.map((client) => (
         <ListItem key={client.id}>
-          <ListItemText primary={client.firstName} secondary={client.lastName} />
+          <ListItemText className='ctii' primary={`FirstName: ${client.firstName}`} secondary={`LastName: ${client.lastName}`} />
           
-          <ListItemText primary={client.createdAt} secondary={client.phoneNumber} />
+          <ListItemText className='ctii' primary={`CreatedAt: ${client.createdAt}`} secondary={`PhoneNumber: ${client.phoneNumber}`} />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(client.id)}>
               <DeleteIcon />

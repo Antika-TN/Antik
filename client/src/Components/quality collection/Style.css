@@ -20,7 +20,7 @@
     text-decoration: none;
     border-radius: 10px;
 }
-.title{
+/* .title{
     font-family: SF Pro Display;
   font-size: 60px;
  
@@ -28,7 +28,7 @@
   letter-spacing: 0.02em;
   text-align: center;
   color: rgba(255, 255, 255, 1);
-  margin-right: 0%;
+ 
   }
   .cards{
     margin-bottom: 69px;
@@ -46,4 +46,15 @@
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 153px;
 
+} */
+
+#table-red {
+  color:red !important;
+}
+#table-green{
+  color: rgba(10, 207, 65, 1);
+  ;
+}
+#table-white{
+  color: white;
 }

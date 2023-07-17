@@ -3,6 +3,8 @@ import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } fro
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import './styl.css'
+
 
 function Allproduct() {
   const [productsname, setProductsname] = useState([])
@@ -60,11 +62,11 @@ console.error('Error deleting product:',error)
              </Link>
     </div>
 
-    <List>
+    <List className='card'>
     {productsname.map((product) => (
       <ListItem key={product.id}>
-        <ListItemText primary={`Category:  ${product.Category.name}`} secondary={`Product: ${product.name}`} />
-        <ListItemText primary={`Company: ${product.Seller.companyName}`} secondary={`Created At: ${product.createdAt}`} />
+        <ListItemText className='ctii' primary={`Product: ${product.name}`} secondary={`Category:  ${product.Category.name}`} />
+        <ListItemText className='ctii' primary={`Company: ${product.Seller.companyName}`} secondary={`Created At: ${product.createdAt}`} />
         <ListItemSecondaryAction>
           <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(product.id)}>
             <DeleteIcon />

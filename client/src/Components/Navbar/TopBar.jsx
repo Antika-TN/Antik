@@ -19,7 +19,7 @@ import jwtDecode from "jwt-decode";
 const pages = [
   { label: "home", link: "/" },
   { label: "about us", link: "/aboutus" },
-  { label: "all products", link: "/products" },
+  { label: "all products", link: "/product" },
 ];
 
 const settings = [

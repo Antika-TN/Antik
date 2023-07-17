@@ -69,3 +69,29 @@ Register css */
 .css-164r41r {
     margin-top: -63px;
 }
+h1.titl {
+    font-family: SF Pro Display;
+    font-size: 63px;
+    line-height: 4px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 0%;
+}
+  .cards{
+    margin-bottom: 69px;
+    margin-top: 109px;
+    padding-left: 170px;
+    padding-right: 170px;
+  }
+  .underTitle{
+    font-family: SF Pro Display;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 153px;
+
+}
