@@ -24,9 +24,9 @@ function Cards() {
   const [productCount, setproductCount] = useState([])
 
   useEffect(() => {
-    fetchClientCount()
-    fetchsellerCount()
-    fetchproductCount()
+    fetchClientCount();
+    fetchsellerCount();
+    fetchproductCount();
   }, []);
 
   async function fetchClientCount() {

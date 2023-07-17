@@ -1,0 +1,13 @@
+.card{
+    background-color: #ffffff0a;
+    border: none;
+    border-radius: 48px;
+    width: 1025px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    left: 20%;
+   
+}
+.ctii{
+    color: aliceblue;
+}

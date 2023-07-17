@@ -59,10 +59,10 @@ console.error('Error deleting seller:',error)
              </Link>
     </div>
 
-    <List>
+    <List className='card'>
       {sellersname.map((seller) => (
         <ListItem key={seller.id}>
-          <ListItemText primary={seller.companyName} secondary={seller.createdAt} />
+          <ListItemText className='ctii' primary={seller.companyName} secondary={seller.createdAt} />
           <ListItemSecondaryAction>
             <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(seller.id)}>
               <DeleteIcon />

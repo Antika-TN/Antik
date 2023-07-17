@@ -11,6 +11,7 @@ router.get('/selectproductCount',AdminControler.SelectproductCount);
 router.delete('/deleteSeller/:id',AdminControler.deleteSeller)
 router.delete('/deleteClient/:id',AdminControler.deleteClient)
 router.delete('/deleteProduct/:id',AdminControler.deleteProduct)
+router.get('/getproductss/:id',AdminControler.sellerproductCount );
 
 router.get('/:id',  /*  middleware ,controller */);
 

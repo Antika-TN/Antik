@@ -12,4 +12,4 @@ router.put('/:id', SellerController.updateProduct /*  middleware ,controller */)
 
 router.delete('/:id', SellerController.deleteProduct /*  middleware ,controller */)
 
-module.exports = router;
+module.exports = router
