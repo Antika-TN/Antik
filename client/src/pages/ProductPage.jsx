@@ -16,10 +16,12 @@ const ProductPage = () => {
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [categoryId, setCategoryId] = useState(null);
+
   const [uploadFile, setUploadFile] = useState("");
  const [imgUrl,setImgUrl]=useState('')
   const [uploadFile1, setUploadFile1] = useState("");
  const [imgUrl1,setImgUrl1]=useState('')
+
 
   const [form] = Form.useForm();
 
@@ -96,6 +98,7 @@ const ProductPage = () => {
     console.log("sellerData", sellerData);
     console.log("userData", userData);
     console.log("products", products);
+
     const uploadImage =async () => {
       const form = new FormData();
       form.append("file", uploadFile);
@@ -121,10 +124,12 @@ const ProductPage = () => {
       .catch((err)=>{console.log(err)})
     };
 
+
     return (
       <div>
         <div className="Footer" style={{ width: 1197, height: 202, left: 122, top: 2226, position: "absolute" }}></div>
         <div className="Banner" style={{ width: 1040, height: 542, left: 201, top: 147, position: "absolute" }}>
+
         <div className="CoverImage" style={{ width: 1040, height: 355, left: 0, top: 0, position: "absolute", background: "linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%)", borderRadius: 5 }}>
   <img src={imgUrl} alt="Cover" style={{ width: "100%", height: "100%", borderRadius: 5 }} />
 </div>
@@ -133,6 +138,13 @@ const ProductPage = () => {
               <AiOutlineEdit style={{ color: "black", width: 19, height: 20 }} />
             </button>
             <input type="file" onChange={(e)=>{setUploadFile(e.target.files[0])}}/>
+
+          <div className="CoverImage" style={{ width: 1040, height: 355, left: 0, top: 0, position: "absolute", background: "linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%)", borderRadius: 5 }}></div>
+          <div className="EditCoverImage" style={{ width: 49, height: 49, padding: 10, left: 971, top: 287, position: "absolute", background: "#6C5DD3", borderRadius: 150, justifyContent: "center", alignItems: "center", gap: 10, display: "flex" }}>
+            <button className="Vector" style={{ width: 49, height: 49, background: "transparent", border: "none", borderRadius: "50%", display: "flex", justifyContent: "center", alignItems: "center" }} onClick={() => console.log("ok1")}>
+              <AiOutlineEdit style={{ color: "black", width: 19, height: 20 }} />
+            </button>
+
           </div>
         </div>
         <div className="EditProfile" style={{ width: 164, height: 30, padding: 10, left: 1062, top: 518, position: "absolute", background: "#6C5DD3", borderRadius: 150, justifyContent: "center", alignItems: "center", gap: 10, display: "flex" }}>
@@ -174,12 +186,14 @@ const ProductPage = () => {
           <div className="FarhanKhan" style={{ left: 572, top: 144, position: "absolute", color: "white", fontSize: 28, fontFamily: "SF Pro Display", fontWeight: "600", wordWrap: "break-word" }}>{sellerData?.companyName}</div>
           <div className="Farhan" style={{ left: 623, top: 190, position: "absolute", color: "rgba(255, 255, 255, 0.40)", fontSize: 18, fontFamily: "SF Pro Display", fontWeight: "400", wordWrap: "break-word" }}>@farhan</div>
         </div>
+
         <div className="PhotosSec" style={{ width: 345, height: 371, left: 200, top: 771, position: "absolute" }}>
           <div className="Group48095548" style={{ width: 345, height: 371, left: 0, top: 0, position: "absolute" }}>
             <div className="Rectangle1905" style={{ width: 345, height: 371, left: 0, top: 0, position: "absolute", background: "rgba(255, 255, 255, 0.10)", borderRadius: 5 }}></div>
             <div className="Photos" style={{ left: 20, top: 20, position: "absolute", color: "white", fontSize: 20, fontFamily: "SF Pro Display", fontWeight: "600", letterSpacing: 0.2, wordWrap: "break-word" }}>Photos</div>
             <div className="SeeAllPhotos" style={{ left: 221, top: 23, position: "absolute", color: "#6C5DD3", fontSize: 16, fontFamily: "SF Pro Display", fontWeight: "600", letterSpacing: 0.16, wordWrap: "break-word" }}>See All Photos</div>
           </div>
+
           <div className="PhotosSec" style={{width: 345, height: 371, position: 'relative'}}>
   <div className="Group48095548" style={{width: 345, height: 371, left: 0, top: 0, position: 'absolute'}}>
     <div className="Rectangle1905" style={{width: 345, height: 371, left: 0, top: 0, position: 'absolute', background: 'rgba(255, 255, 255, 0.10)', borderRadius: 5}} />
@@ -195,13 +209,15 @@ const ProductPage = () => {
   <img className="Rectangle1908" style={{width: 95, height: 91, left: 230, top: 65, position: 'absolute', borderRadius: 4}} src="https://loozap.com/storage/files/tn/tal_08-03-2022/thumb-816x460-loozap_tunisie_mkk2v0f__402cbf5e-001b-414d-adf0-2d5bf7aca193" />
   <img className="Rectangle1911" style={{width: 95, height: 91, left: 230, top: 166, position: 'absolute', borderRadius: 4}} src="https://i.etsystatic.com/26692417/r/il/b936a3/3477305850/il_300x300.3477305850_ebc1.jpg" />
 </div>          
+
         </div>
         <div className="FeedSec1" style={{ width: 666, height: 532, left: 575, top: 769, position: "absolute" }}>
           <img className="Ellipse248" style={{ width: 43, height: 43, left: 0, top: 0, position: "absolute", borderRadius: "50%" }} src={''} alt="Profile" />
           <div className="FarhanKhan" style={{ left: 56, top: 0, position: "absolute", color: "white", fontSize: 20, fontFamily: "SF Pro Display", fontWeight: "600", wordWrap: "break-word" }}>{sellerData.companyName}</div>
           <div className="Farhan" style={{ left: 56, top: 27, position: "absolute", color: "rgba(255, 255, 255, 0.50)", fontSize: 16, fontFamily: "SF Pro Display", fontWeight: "400", wordWrap: "break-word" }}>@farhan</div>
           <div className="M" style={{ left: 178, top: 2, position: "absolute", color: "rgba(255, 255, 255, 0.50)", fontSize: 16, fontFamily: "SF Pro Display", fontWeight: "400", wordWrap: "break-word" }}>4m</div>
-          <img className="Rectangle1901" style={{ width: 666, height: 426, left: 0, top: 106, position: "absolute", borderRadius: 5 }} src={'https://i.etsystatic.com/26692417/r/il/b936a3/3477305850/il_300x300.3477305850_ebc1.jpg'} alt="Feed" />
+        <img className="Rectangle1901" style={{ width: 666, height: 426, left: 0, top: 106, position: "absolute", borderRadius: 5 }} src={'https://i.etsystatic.com/26692417/r/il/b936a3/3477305850/il_300x300.3477305850_ebc1.jpg'} alt="Feed" />
+
         </div>
       </div>
     );
