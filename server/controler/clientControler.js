@@ -29,7 +29,7 @@ const updateClient = function(req,res){
     createdAt:req.body.createdAt,
     updatedAt:req.body.updatedAt
   },
-  {where: { UserId: req.params.UserId }})
+  {where: { id: req.params.id }})
   .then((results) => {
     res.status(200).send(results); 
   })
