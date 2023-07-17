@@ -1,13 +1,15 @@
-;const express = require('express');
+
+const express = require('express');
 const router = express.Router();
+const clientControllers = require('../controler/clientControler')
+
+router.get('/',  /*  middleware ,controller */clientControllers.getAllClients);
 
 
-router.get('/',  /*  middleware ,controller */);
+router.get('/:UserId',  /*  middleware ,controller */clientControllers.getOneClients);
 
 
-router.get('/:id',  /*  middleware ,controller */);
+router.put('/:UserId',  /*  middleware ,controller */clientControllers.updateClient);
 
-
-router.put('/:id',  /*  middleware ,controller */);
 
 module.exports = router;
