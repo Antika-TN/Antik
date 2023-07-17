@@ -11,6 +11,7 @@ const UserProfile = () => {
  const [toggle1, setToggle1] = useState(false)
  const [uploadFile, setUploadFile] = useState("");
 
+
  const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [address, setAddress] = useState('')
@@ -18,6 +19,7 @@ const UserProfile = () => {
   const [createdAt, setCreatedAt] = useState('')
   const [updatedAt, setUpdatedAt] = useState('')
  
+
 
  useEffect(() => {
   axios
@@ -29,6 +31,18 @@ const UserProfile = () => {
     console.error(error);
   })
 }, [refresh])
+const uploadImage =async () => {
+  const form = new FormData();
+  form.append("file", uploadFile);
+  form.append("upload_preset", "farescloud");
+  console.log(form)
+  await axios.post("https://api.cloudinary.com/v1_1/dt7t7wjql/upload", form).then((res) => {
+    console.log(res.data.secure_url)
+   setImgUrl(res.data.secure_url)
+   
+  })
+  .catch((err)=>{console.log(err)})
+};
 
 const updateClient = function(firstName,lastName,address,phoneNumber,createdAt,updatedAt,id){ 
   axios
@@ -236,7 +250,7 @@ updatedAt:updatedAt
        <div>
          <input type="file" onChange ={(event) => {setUploadFile(event.target.files[0]);}}/>
        </div>
-      <button > Upload File</button>
+      <button onClick={()=>{uploadImage()}} > Upload File</button>
      </form> 
       )}
       </div>
