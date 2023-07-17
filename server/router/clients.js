@@ -9,7 +9,7 @@ router.get('/',  /*  middleware ,controller */clientControllers.getAllClients);
 router.get('/:UserId',  /*  middleware ,controller */clientControllers.getOneClients);
 
 
-router.put('/:UserId',  /*  middleware ,controller */clientControllers.updateClient);
+router.put('/:id',  /*  middleware ,controller */clientControllers.updateClient);
 
 
 module.exports = router;

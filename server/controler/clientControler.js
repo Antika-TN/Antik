@@ -30,7 +30,7 @@ const updateClient = function(req,res){
     updatedAt:req.body.updatedAt,
     image:req.body.image
   },
-  {where: { UserId: req.params.UserId }})
+  {where: { id: req.params.id }})
   .then((results) => {
     res.status(200).send(results); 
   })

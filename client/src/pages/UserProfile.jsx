@@ -8,8 +8,18 @@ const UserProfile = () => {
  const [client,setclient]=useState([])
  const [refresh,setRefresh]= useState(false)
  const [toggle, setToggle] = useState(false)
+ const [toggle1, setToggle1] = useState(false)
  const [uploadFile, setUploadFile] = useState("");
- const [imgUrl,setImgUrl]=useState('')
+
+
+ const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [address, setAddress] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+  const [createdAt, setCreatedAt] = useState('')
+  const [updatedAt, setUpdatedAt] = useState('')
+ 
+
 
  useEffect(() => {
   axios
@@ -33,6 +43,26 @@ const uploadImage =async () => {
   })
   .catch((err)=>{console.log(err)})
 };
+
+const updateClient = function(firstName,lastName,address,phoneNumber,createdAt,updatedAt,id){ 
+  axios
+  .put(`http://localhost:3000/clients/${id}`,
+  {firstName:firstName,
+  lastName:lastName,
+  address:address,
+  phoneNumber:phoneNumber,
+createdAt:createdAt,
+updatedAt:updatedAt
+})
+ 
+  .then((response)=>{
+    console.log(response.data)
+    setRefresh(!refresh)
+  })
+  .catch((error)=>{
+    console.error(error);
+  })
+}
 
   return (
     <div>
@@ -124,7 +154,7 @@ const uploadImage =async () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          onClick={() => console.log("ok2")}
+          onClick={() => setToggle1(!toggle1)}
         >
           <AiOutlineEdit style={{ color: "black", width: 19, height: 20 }} />
         </button>
@@ -140,6 +170,18 @@ const uploadImage =async () => {
         >
           Edit Profile
         </div>
+
+        {toggle1 && (
+      <div className='input'>
+        <input className='firstName-input' placeholder='First Name' onChange={(e)=>(setFirstName(e.target.value))} />  
+        <input className='lastName-input' placeholder='Last Name' onChange={(e)=>(setLastName(e.target.value))} />
+        <input className='address-input' placeholder='address' onChange={(e)=>(setAddress(e.target.value))} />
+        <input className='phoneNumber-input' placeholder='Phone Number' onChange={(e)=>(setPhoneNumber(e.target.value))} />
+        <input className='createdAt-input' placeholder='Created At' onChange={(e)=>(setCreatedAt(e.target.value))} />
+        <input className='updatedAt-input' placeholder='Updated At' onChange={(e)=>(setUpdatedAt(e.target.value))} />
+        <button className='edit'  onClick={()=>{updateClient(firstName,lastName,address,phoneNumber,createdAt,updatedAt,client.id)}} >Edit</button>
+     </div>
+     )}
       </div>
 
       
@@ -289,6 +331,84 @@ const uploadImage =async () => {
               borderRadius: 5,
             }}
           ></div>
+
+              <div
+            className="Rectangle1905"
+            style={{
+              width: 345,
+              height: 371,
+              left: 0,
+              top: 400,
+              position: "absolute",
+              background: "rgba(255, 255, 255, 0.10)",
+              borderRadius: 5,
+            }}
+          ></div>
+
+            <div
+            className="Photos"
+            style={{
+              left: 20,
+              top: 420,
+              position: "absolute",
+              color: "white",
+              fontSize: 20,
+              fontFamily: "SF Pro Display",
+              fontWeight: "600",
+              letterSpacing: 0.2,
+              wordWrap: "break-word",
+            }}
+          >
+            Description
+            <div>
+              <h1   style={{
+              // left: 221,
+              top: 23,
+              position: "absolute",
+              color: "#6C5DD3",
+              fontSize: 16,
+              fontFamily: "SF Pro Display",
+              fontWeight: "600",
+              letterSpacing: 0.16,
+              wordWrap: "break-word",
+            }}>Address:</h1>
+
+             <div className='details'> {client.address}</div>
+
+             <h2  style={{
+              // left: 221,
+              top: 53,
+              position: "absolute",
+              color: "#6C5DD3",
+              fontSize: 16,
+              fontFamily: "SF Pro Display",
+              fontWeight: "600",
+              letterSpacing: 0.16,
+              wordWrap: "break-word",
+            }}>Phone Number:</h2>
+
+             <div className='details1'> {client.phoneNumber}</div>
+
+             <h2  style={{
+              // left: 221,
+              top: 93,
+              position: "absolute",
+              color: "#6C5DD3",
+              fontSize: 16,
+              fontFamily: "SF Pro Display",
+              fontWeight: "600",
+              letterSpacing: 0.16,
+              wordWrap: "break-word",
+            }}>Created At:</h2>
+
+             <div className='details2'> {client.createdAt}</div>
+
+            </div>
+          </div>
+
+
+
+
           <div
             className="Photos"
             style={{
@@ -509,7 +629,7 @@ const uploadImage =async () => {
           alt="Feed"
         />
       </div>
-      <div
+      {/* <div
         className="Footer"
         style={{
           width: 1197,
@@ -518,7 +638,7 @@ const uploadImage =async () => {
           top: 2226,
           position: "absolute",
         }}
-      ></div>
+      ></div> */}
     </div>
   )
 }
