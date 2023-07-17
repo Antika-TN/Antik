@@ -1,11 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', /*  middleware ,controller */);
+const orderControllers = require('../controler/order')
+
+router.get('/', /*  middleware ,controller */orderControllers.getAllOrder);
 
 
-router.get('/:id',/*  middleware ,controller */);
+router.get('/:ClientId',/*  middleware ,controller */orderControllers.getOneOrder);
 
-router.post('/',/*  middleware ,controller */ );
+router.post('/insert/:ClientId',/*  middleware ,controller */ orderControllers.insertOrder);
+
+router.put('/:ClientId',/*  middleware ,controller */ orderControllers.updateOrder);
+
+router.delete('/:id',orderControllers.deleteOrder)
+
 
 module.exports = router;
