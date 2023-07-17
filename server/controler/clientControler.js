@@ -27,7 +27,8 @@ const updateClient = function(req,res){
     lastName:req.body.lastName,
     phoneNumber:req.body.phoneNumber,
     createdAt:req.body.createdAt,
-    updatedAt:req.body.updatedAt
+    updatedAt:req.body.updatedAt,
+    image:req.body.image
   },
   {where: { UserId: req.params.UserId }})
   .then((results) => {
