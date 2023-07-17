@@ -7,6 +7,10 @@ const UserProfile = () => {
 
  const [client,setclient]=useState([])
  const [refresh,setRefresh]= useState(false)
+ const [toggle, setToggle] = useState(false)
+ const [uploadFile, setUploadFile] = useState("");
+
+ 
 
  useEffect(() => {
   axios
@@ -126,6 +130,8 @@ const UserProfile = () => {
           Edit Profile
         </div>
       </div>
+
+      
       <div
         className="ProfilePic"
         style={{
@@ -134,9 +140,13 @@ const UserProfile = () => {
           left: 460,
           top: 285,
           position: "absolute",
-        }}
+        }
+      }
       >
-        <img
+   
+
+
+   <img
           className="Ellipse251"
           style={{
             width: 120,
@@ -153,8 +163,8 @@ const UserProfile = () => {
         <div
           className="Ellipse252"
           style={{
-            width: 31,
-            height: 31,
+            width: 40,
+            height: 40,
             left: 294,
             top: 230,
             position: "absolute",
@@ -165,8 +175,8 @@ const UserProfile = () => {
         <button
           className="Vector"
           style={{
-            width: 40,
-            height: 30,
+            width: 60,
+            height: 60,
             left: 290,
             top: 230,
             position: "absolute",
@@ -177,11 +187,24 @@ const UserProfile = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          onClick={() => console.log("ok3")}
+          onClick={() => setToggle(!toggle)} 
         >
-          <FaCamera style={{ color: "black", width: 19, height: 20 }} />
+         Edit
         </button>
+        {toggle && (
+       <form className='upload'>
+     
+       <div>
+         <input type="file" onChange ={(event) => {setUploadFile(event.target.files[0]);}}/>
+       </div>
+      <button > Upload File</button>
+     </form> 
+      )}
       </div>
+
+  
+ 
+
       <div
         className="Text"
         style={{
