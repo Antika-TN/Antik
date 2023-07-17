@@ -44,7 +44,7 @@ const AppRoutes = () => {
         <Route path="/products" element={<Allproduct />} />
         
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

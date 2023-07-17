@@ -3,6 +3,31 @@
             margin-top: 220px
 }
 
+.details{
+  margin-left: 100px;
+            margin-top: 10px
+}
+
+.details1{
+  margin-left: 130px;
+            margin-top: 10px
+}
+
+.details2{
+  margin-left: 130px;
+  margin-top: 10px
+}
+
+.input{
+  border-radius: 5px;
+  background-color: #4d5a80;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 200px;
+}
+
+
+
 body{
   background: linear-gradient( 90deg, #984D38,#181E41 60%);
 
